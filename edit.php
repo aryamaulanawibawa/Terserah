@@ -14,7 +14,7 @@ if (isset($_POST['update'])) {
 
 if ($gambar !="") {
     $ekstensi_diperbolehkan = array('png', 'jpg');
-    $x = explode('.' $gambar);
+    $x = explode('.', $gambar);
     $ekstensi = strtolower(end($x));
     $file_tmp = $_FILES['gambar']['tmp_name'];
     $angka_acak = rand(1, 999);
@@ -24,7 +24,7 @@ if ($gambar !="") {
             $query = "UPDATE tb_users SET name='$name', Email='$email', Mobile='$mobile, Gambar='$nama_gambar_baru' WHERE id=$id";
             $result = mysqli_query($mysqli, $query);
 
-            if (!result) {
+            if (!$result) {
                 die("Querry gagal dijalankan:" . mysqli_errno($mysqli) . 
                     "-" . mysqli_error($mysqli));
 
@@ -36,12 +36,13 @@ if ($gambar !="") {
         else {
             echo "<script>alert('Hanya boleh jpg atau png.');window.location='tabel.php';</script>";
         }
-        else {
+        }   else {
             $result = mysqli_query($mysqli, "UPDATE tb_users SET name='$name', Email='$email', Mobile='$mobile, ambar='$nama_gambar_baru' WHERE id=$id");
             header("Location: tabel.php");
         }
 
-}
+
+
 
 
 

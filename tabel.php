@@ -31,7 +31,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM tb_users ORDER BY id Desc");
             echo "<td>" . $user_data['Name'] . "</td>";
             echo "<td>" . $user_data['Mobile'] . "</td>";
             echo "<td>" . $user_data['Email'] . "</td>";
-            echo "<td style='text-align: center;'><img src= 'gambar/{$user_data['gambar']}' style='width: 120px;'></td>
+            echo "<td style='text-align: center;'><img src= 'gambar/{$user_data['gambar']}' style='width: 120px;'></td>";
             echo "<td> <a href ='edit.php?id=$user_data[id]'>Edit</a> | <a href='delete.php?id=$user_data[id]'>Delete</a></td></tr>";
         }
     
